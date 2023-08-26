@@ -28,3 +28,10 @@ void setup() {
 void loop() {
   Blynk.run();
 }
+
+BLYNK_WRITE(V0)
+{
+ int value = param.asInt();
+ digitalWrite(LED_RED, value);
+ Blynk.virtualWrite(V3, value);
+}
